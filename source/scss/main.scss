@@ -1,0 +1,107 @@
+// reset
+@import "./reset.scss";
+// fonts
+@import "../fonts/fonts.scss";
+
+// colors
+$color_1: #5e6282;
+$color_black: #000;
+$color_subtitle: #4475f2;
+$color_link: #9a9ea6;
+$color_link-hover: #4737ff;
+
+body {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  color: $color_1;
+}
+
+.wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  overflow: clip;
+
+  & .page {
+    flex-grow: 1;
+  }
+}
+
+[class*="__container"] {
+  max-width: 1230px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: 0 auto;
+}
+
+// Components
+
+.header-block {
+  &__label {
+    text-transform: uppercase;
+    color: $color_subtitle;
+    font-weight: 800;
+    letter-spacing: 2px;
+    line-height: 128%; /* 23/18 */
+    font-size: 1.125rem;
+
+    &:not(:last-child) {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__title {
+    color: $color_black;
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 135%; /* 65/48 */
+  }
+}
+
+//Header
+
+.header {
+  padding-top: 77px;
+  &__container {
+    display: flex;
+    align-items: center;
+    gap: 125px;
+  }
+  &__logo {
+    font-weight: 700;
+    font-size: 1.125rem;
+    display: flex;
+    align-items: center;
+    flex: 0 0 80px;
+    max-width: 100%;
+    color: $color_black;
+
+    &::before {
+      content: "";
+      background-image: url(../img/logo.png);
+      background-size: cover;
+      display: inline-block;
+      width: 28px;
+      height: 28px;
+      margin-right: 10px;
+    }
+  }
+
+  & .menu {
+    &__list {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+    }
+
+    &__link {
+      color: $color_link;
+      font-size: 0.875rem;
+      transition: color 0.3s;
+
+      &:hover {
+        color: $color_link-hover;
+      }
+    }
+  }
+}
