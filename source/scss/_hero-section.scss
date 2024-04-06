@@ -5,8 +5,38 @@
   padding-top: 3.875rem;
   padding-bottom: 2.5rem;
   position: relative;
+  margin-bottom: 10.625rem;
+
+  @media (max-width: 1200px) {
+    & {
+      margin-bottom: 6.25rem;
+    }
+  }
+  @media (max-width: 991.98px) {
+    & {
+      margin-bottom: 3.75rem;
+    }
+  }
+  @media (max-width: 767.98px) {
+    & {
+      margin-bottom: 2.5rem;
+    }
+  }
+  @media (max-width: 479.98px) {
+    & {
+      padding-top: 2.5rem;
+    }
+  }
+
   &__container {
     display: flex;
+
+    @media screen and (max-width: 1200px) {
+      & {
+        row-gap: 30px;
+        flex-direction: column;
+      }
+    }
 
     &::before,
     &::after {
@@ -15,7 +45,7 @@
       background-color: $color_blue;
       box-shadow: 0 1.875rem 3.75rem 0 $color_shadow-decor;
       border-radius: 3.125rem;
-      width: 100vw;
+      width: 200vw;
       height: 150%;
       transform-origin: left bottom;
       bottom: 0;
@@ -28,7 +58,7 @@
     }
 
     &::after {
-      left: calc(50% + 444px);
+      left: calc(50% + 27.75rem);
       transform: skewX(31deg);
     }
 
@@ -36,6 +66,20 @@
       display: grid;
       align-content: start;
       gap: 1.875rem;
+      position: relative;
+      z-index: 2;
+
+      @media (min-width: 1200px) {
+        & {
+          padding-right: 20px;
+        }
+      }
+
+      @media (min-width: 479.98px) {
+        & {
+          justify-items: start;
+        }
+      }
 
       &__title {
         font-size: 4.75rem;
@@ -44,9 +88,20 @@
         letter-spacing: -0.25rem;
         line-height: 117.105263%; /* 89/76 */
 
+        @media (max-width: 991.98px) {
+          & {
+            font-size: 3.4375rem;
+          }
+        }
+
+        @media (max-width: 767.98px) {
+          font-size: 2.625rem;
+        }
+
         & a {
           color: $color_blue;
           text-decoration: underline;
+          text-shadow: 0 0 0.5rem $color_white;
 
           &:hover {
             text-decoration: none;
@@ -62,7 +117,7 @@
 
       &__button {
         box-sizing: border-box;
-
+        text-align: center;
         border-radius: 0.625rem;
         background-color: $color_blue;
         padding: 1.125rem 3.375rem;
@@ -85,6 +140,10 @@
       grid-template-columns: repeat(3, 1fr);
       grid-template-rows: repeat(2, 1fr);
       gap: 1.6875rem;
+
+      @media (max-width: 1200px) {
+        align-self: center;
+      }
 
       &__item--01 {
         grid-row: span 2;
