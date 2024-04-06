@@ -1,15 +1,11 @@
 // reset
 @import "./reset.scss";
 // fonts
-@import "../fonts/fonts.scss";
+@import "../fonts/fonts";
+@import "./hero-section";
+@import "./colors";
 
 // colors
-$color_1: #5e6282;
-$color_black: #000;
-$color_subtitle: #4475f2;
-$color_link: #9a9ea6;
-$color_link-hover: #4737ff;
-
 body {
   font-family: "Plus Jakarta Sans", sans-serif;
   color: $color_1;
@@ -39,7 +35,7 @@ body {
 .header-block {
   &__label {
     text-transform: uppercase;
-    color: $color_subtitle;
+    color: $color_blue;
     font-weight: 800;
     letter-spacing: 2px;
     line-height: 128%; /* 23/18 */
@@ -61,6 +57,8 @@ body {
 //Header
 
 .header {
+  // position: sticky;
+  // top: 0;
   padding-top: 77px;
   &__container {
     display: flex;
